@@ -103,9 +103,9 @@ const Home: React.FC = () => {
         </div>
         
         <div className="tours-grid">
-          <TourCard title="Golden Desert Safari" price="$299" image="/assets/tour-1.png" tag="Elite" />
-          <TourCard title="Marina Yacht Cruise" price="$450" image="/assets/tour-2.png" tag="Premium" />
-          <TourCard title="Hatta Mountain Safari" price="$350" image="/assets/tour-3.png" tag="Adventure" />
+          <TourCard title="Golden Desert Safari" image="/assets/tour-1.png" tag="Elite" />
+          <TourCard title="Marina Yacht Cruise" image="/assets/tour-2.png" tag="Premium" />
+          <TourCard title="Hatta Mountain Safari" image="/assets/tour-3.png" tag="Adventure" />
         </div>
       </section>
     </div>

@@ -3,13 +3,12 @@ import './TourCard.css';
 
 interface TourCardProps {
   title: string;
-  price: string;
   image: string;
   tag: string;
   details?: string;
 }
 
-const TourCard: React.FC<TourCardProps> = ({ title, price, image, tag, details }) => {
+const TourCard: React.FC<TourCardProps> = ({ title, image, tag, details }) => {
   return (
     <div className="tour-card glass-card">
       <div className="tour-img">
@@ -21,8 +20,7 @@ const TourCard: React.FC<TourCardProps> = ({ title, price, image, tag, details }
         {details && <p className="tour-details">{details}</p>}
         <div className="tour-footer">
           <div className="price-tag">
-            <span className="label">Starting From</span>
-            <span className="amount">{price}</span>
+            <span className="label">Inquire for Private Access</span>
           </div>
           <button className="btn-details">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

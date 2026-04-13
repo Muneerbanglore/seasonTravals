@@ -3,6 +3,7 @@ import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +14,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
       <div className="container nav-content">
         <div className="logo">
           <span className="premium-font">SEASONS</span>
@@ -21,17 +22,25 @@ const Navbar: React.FC = () => {
           <span className="logo-sub">TRAVEL</span>
         </div>
         
-        <ul className="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#tours">Expeditions</a></li>
-          <li><a href="#about">Our Story</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div className={`nav-links-container ${menuOpen ? 'active' : ''}`}>
+          <ul className="nav-links">
+            <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
+            <li><a href="#tours" onClick={() => setMenuOpen(false)}>Expeditions</a></li>
+            <li><a href="#about" onClick={() => setMenuOpen(false)}>Our Story</a></li>
+            <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+          </ul>
 
-        <div className="nav-actions">
-          <button className="btn-secondary">Client Portal</button>
-          <button className="btn-book">Plan Expedition</button>
+          <div className="nav-actions">
+            <button className="btn-secondary">Client Portal</button>
+            <button className="btn-book">Plan Expedition</button>
+          </div>
         </div>
+
+        <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </button>
       </div>
     </nav>
   );

@@ -72,16 +72,11 @@
 }
 
 .price-tag .label {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.price-tag .amount {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 0.75rem;
   color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
 }
 
 .btn-details {
